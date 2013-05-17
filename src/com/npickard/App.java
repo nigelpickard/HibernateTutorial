@@ -51,6 +51,11 @@ public class App{
         session.save(message2);
         session.save(message3);
         session.getTransaction().commit();	
+        
+        //now get the very first message
+        Message message = (Message)session.load(Message.class, new Long(5));
+        logger.info("Retrieved message is " + message.toString());
+        
     }
 
 }

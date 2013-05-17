@@ -8,7 +8,7 @@ public class Message {
 	private String text;
 	private Message nextMessage;
 	
-	private Message(){
+	public Message(){
 		
 	}
 
@@ -38,6 +38,10 @@ public class Message {
 
 	public void setNextMessage(Message nextMessage) {
 		this.nextMessage = nextMessage;
+	}
+	
+	public String toString(){
+		return this.text + (nextMessage==null ? " and there is no next message": " and next message is: " + nextMessage.getText());
 	}
 	
 	
