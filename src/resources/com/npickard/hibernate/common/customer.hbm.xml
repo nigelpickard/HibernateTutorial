@@ -3,7 +3,7 @@
 "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
 "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
 <hibernate-mapping>
-    <class name="com.npickard.hibernate.common.Customer" table="customer" catalog="hibernatedb">
+    <class name="com.npickard.hibernate.common.Customer" table="CUSTOMER" catalog="hibernatedb">
         <id name="id" type="java.lang.Integer">
             <column name="ID" />
             <generator class="identity" />

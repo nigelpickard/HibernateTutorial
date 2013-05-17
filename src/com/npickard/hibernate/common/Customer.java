@@ -1,7 +1,11 @@
 package com.npickard.hibernate.common;
 
-public class Customer {
+import org.apache.log4j.Logger;
 
+import com.npickard.App;
+
+public class Customer {
+	static Logger logger = Logger.getLogger(Customer.class);
 	private Integer id;
 	private String firstName;
 	private String lastName;

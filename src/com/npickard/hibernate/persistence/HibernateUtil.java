@@ -1,14 +1,17 @@
 package com.npickard.hibernate.persistence;
 
+import org.apache.log4j.Logger;
 import org.hibernate.HibernateException;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
 import org.hibernate.service.ServiceRegistry;
 import org.hibernate.service.ServiceRegistryBuilder;
 
+import com.npickard.App;
+
 
 public class HibernateUtil {
-    
+	static Logger logger = Logger.getLogger(HibernateUtil.class);
     private static SessionFactory sessionFactory;
     private static ServiceRegistry serviceRegistry;
 
@@ -22,7 +25,7 @@ public class HibernateUtil {
         }
         catch (HibernateException he)
         {
-            System.err.println("Error creating Session: " + he);
+           logger.error("Error creating Session: " + he);
             throw new ExceptionInInitializerError(he);
         }
     }
