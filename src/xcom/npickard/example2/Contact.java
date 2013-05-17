@@ -1,4 +1,4 @@
-package com.npickard;
+package xcom.npickard.example2;
 
 public class Contact {
 	private String firstName;
