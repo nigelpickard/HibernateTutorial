@@ -7,8 +7,6 @@ import org.hibernate.cfg.Configuration;
 import org.hibernate.service.ServiceRegistry;
 import org.hibernate.service.ServiceRegistryBuilder;
 
-import com.npickard.App;
-
 
 public class HibernateUtil {
 	static Logger logger = Logger.getLogger(HibernateUtil.class);
@@ -20,6 +18,12 @@ public class HibernateUtil {
         try
         {
             Configuration configuration = new Configuration().configure();
+            
+            //add classes here
+            configuration.addClass(com.npickard.helloworld.Message.class);
+            configuration.addClass(com.npickard.hibernate.common.Customer.class);
+            
+            
             serviceRegistry = new ServiceRegistryBuilder().applySettings(configuration.getProperties()).buildServiceRegistry();
             sessionFactory = configuration.buildSessionFactory(serviceRegistry);
         }

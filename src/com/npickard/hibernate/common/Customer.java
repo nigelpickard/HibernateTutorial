@@ -2,11 +2,9 @@ package com.npickard.hibernate.common;
 
 import org.apache.log4j.Logger;
 
-import com.npickard.App;
-
 public class Customer {
 	static Logger logger = Logger.getLogger(Customer.class);
-	private Integer id;
+	private Long id;
 	private String firstName;
 	private String lastName;
 
@@ -18,11 +16,11 @@ public class Customer {
 		this.lastName = lastName;
 	}
 
-	public Integer getId() {
+	public Long getId() {
 		return id;
 	}
 
-	public void setId(Integer id) {
+	public void setId(Long id) {
 		this.id = id;
 	}
 

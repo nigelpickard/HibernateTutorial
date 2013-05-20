@@ -4,7 +4,7 @@
 "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
 <hibernate-mapping>
     <class name="com.npickard.hibernate.common.Customer" table="CUSTOMER" catalog="hibernatedb">
-        <id name="id" type="java.lang.Integer">
+       <id name="id" type="java.lang.Long">
             <column name="ID" />
             <generator class="identity" />
         </id>
@@ -12,7 +12,8 @@
             <column name="FIRST_NAME" length="20" not-null="true" />
         </property>
         <property name="lastName" type="string">
-            <column name="LAST_NAME" length="30" not-null="true" />
+            <column name="LAST_NAME" length="20" not-null="true" />
         </property>
+        
     </class>
 </hibernate-mapping>

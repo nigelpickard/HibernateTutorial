@@ -1,4 +1,4 @@
-package com.npickard;
+package com.npickard.helloworld;
 
 import org.apache.log4j.BasicConfigurator;
 import org.apache.log4j.Logger;
@@ -8,33 +8,20 @@ import com.npickard.helloworld.Message;
 import com.npickard.hibernate.common.Customer;
 import com.npickard.hibernate.persistence.HibernateUtil;
 
-public class App{
+public class MessageApp{
 	// Define a static logger variable so that it references the
 	// Logger instance named "HelloWorld".
-	static Logger logger = Logger.getLogger(App.class);
+	static Logger logger = Logger.getLogger(MessageApp.class);
 
 	static{
 	// Set up a simple configuration that logs on the console.
 		BasicConfigurator.configure();
 	}
 	
+	
     public static void main( String[] args ){
-    	App app = new App();
-    	//app.runCustomerExample();
+    	MessageApp app = new MessageApp();
     	app.runHelloWorldExample();
-    	
-    }
-    
-    
-    private void runCustomerExample(){
-    	logger.info("Hibernate 4 Customer example");
-        Session session = HibernateUtil.getSessionFactory().openSession();
-        session.beginTransaction();
-        Customer customer = new Customer();
-        customer.setFirstName("John");
-        customer.setLastName("Doe");
-        session.save(customer);
-        session.getTransaction().commit();	
     }
     
     private void runHelloWorldExample(){
