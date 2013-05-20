@@ -28,9 +28,9 @@ public class MessageApp{
     	logger.info("Hibernate 4 Hello World example");
         Session session = HibernateUtil.getSessionFactory().openSession();
         session.beginTransaction();
-        Message message1 = new Message("Hello, message 1!");
-        Message message2 = new Message("Hello, message 2!");
-        Message message3 = new Message("Hello, message 3!");
+        Message message1 = new Message("Hello, message 1!", "important");
+        Message message2 = new Message("Hello, message 2!", "urgent");
+        Message message3 = new Message("Hello, message 3!", "trivial");
         message1.setNextMessage(message2);
         message2.setNextMessage(message3);
         
@@ -40,7 +40,7 @@ public class MessageApp{
         session.getTransaction().commit();	
         
         //now get the very first message
-        int existingMessageId = 41;
+        int existingMessageId = 2;
         Message message = (Message)session.load(Message.class, new Long(existingMessageId));
         logger.info("Retrieved message is " + message.toString());
         
