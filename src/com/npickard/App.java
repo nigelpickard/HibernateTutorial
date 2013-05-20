@@ -53,7 +53,8 @@ public class App{
         session.getTransaction().commit();	
         
         //now get the very first message
-        Message message = (Message)session.load(Message.class, new Long(5));
+        int existingMessageId = 41;
+        Message message = (Message)session.load(Message.class, new Long(existingMessageId));
         logger.info("Retrieved message is " + message.toString());
         
     }
